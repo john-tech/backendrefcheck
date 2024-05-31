@@ -13,11 +13,13 @@
     <meta name="author" content="PIXINVENT">
     <title>Form Wizard - Stack Responsive Bootstrap 4 Admin Template</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon-32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
         rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
@@ -36,6 +38,9 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/pickers/daterange/daterange.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
 
@@ -147,8 +152,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="firstName1">First Name:</label>
-                                                            <input type="text" class="form-control" id="firstName1" name="firstName1"
-                                                                required>
+                                                            <input type="text" class="form-control" id="firstName1"
+                                                                name="firstName1" required>
 
                                                         </div>
                                                     </div>
@@ -156,8 +161,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="lastName1">Last Name:</label>
-                                                            <input type="text" class="form-control" id="lastName1" name="lastName1"
-                                                                required>
+                                                            <input type="text" class="form-control" id="lastName1"
+                                                                name="lastName1" required>
 
                                                         </div>
                                                     </div>
@@ -168,7 +173,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="date1">Date of Birth :</label>
-                                                            <input type="date" class="form-control" id="date1"name="date1"required>
+                                                            <input type="date" class="form-control" id="date1"
+                                                                name="date1" required>
 
                                                         </div>
                                                     </div>
@@ -176,7 +182,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="age1">Age:</label>
-                                                            <input type="text" class="form-control" name="age1" id="age1"  required>
+                                                            <input type="text" class="form-control" name="age1"
+                                                                id="age1" required>
 
                                                         </div>
                                                     </div>
@@ -186,7 +193,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="pob">Place of Birth:</label>
-                                                            <input type="text" class="form-control" id="pob1" name="pob1">
+                                                            <input type="text" class="form-control" id="pob1"
+                                                                name="pob1">
 
                                                         </div>
                                                     </div>
@@ -220,8 +228,8 @@
 
                                                         <div class="form-group">
                                                             <label for="address1">Address :</label>
-                                                            <input type="text" class="form-control" id="addressx"name="addressx"
-                                                                required>
+                                                            <input type="text" class="form-control" id="addressx"
+                                                                name="addressx" required>
                                                         </div>
                                                     </div>
 
@@ -246,8 +254,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="state1">State:</label>
-                                                            <input type="text" class="form-control" id="statex" name="statex"
-                                                                required>
+                                                            <input type="text" class="form-control" id="statex"
+                                                                name="statex" required>
 
 
 
@@ -258,7 +266,8 @@
                                                         <div class="form-group">
 
                                                             <label for="city1">City:</label>
-                                                            <input type="text" class="form-control" id="cityu"id="cityu" required>
+                                                            <input type="text" class="form-control" id="cityu"
+                                                                id="cityu" required>
 
                                                         </div>
                                                     </div>
@@ -269,8 +278,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="postalc1">Postal Code:</label>
-                                                            <input type="tel" class="form-control" id="postaladd"name="postaladd"
-                                                                required>
+                                                            <input type="tel" class="form-control" id="postaladd"
+                                                                name="postaladd" required>
 
 
                                                         </div>
@@ -279,8 +288,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="phoneNumber1">Phone Number :</label>
-                                                            <input type="tel" class="form-control" id="phoneNumer1" name="phoneNumer1"    
-                                                                required>
+                                                            <input type="tel" class="form-control" id="phoneNumer1"
+                                                                name="phoneNumer1" required>
 
 
                                                         </div>
@@ -291,8 +300,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="email1">Email:</label>
-                                                            <input type="email" class="form-control" id="emel1" name="emel1"
-                                                                require>
+                                                            <input type="email" class="form-control" id="emel1"
+                                                                name="emel1" require>
 
 
                                                         </div>
@@ -301,7 +310,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="insurance1">Social Insurance Number:</label>
-                                                            <input type="text" class="form-control" id="insuranc1"id="insuranc1">
+                                                            <input type="text" class="form-control" id="insuranc1"
+                                                                id="insuranc1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -608,15 +618,18 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="startdate">Start Date:</label>
-                                                            <input type="date" class="form-control" id="start1" name="start1"
-                                                                required>
+                                                            <input type="text"
+                                                                class="form-control pickadate picker__input picker__input--active"
+                                                                placeholder="Basic Pick-a-date" readonly=""
+                                                                id="P1043209353" aria-haspopup="true"
+                                                                aria-readonly="false" aria-owns="P1043209353_root">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="enddate">End Date:</label>
-                                                            <input type="date" class="form-control" id="endate" name="endate" required>
+                                                            <input type="date" class="form-control" id="end1" required>
 
                                                         </div>
                                                     </div>
@@ -626,7 +639,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="salary1">Salary:</label>
-                                                            <input type="text" class="form-control" id="salary1" name="salary1"
+                                                            <input type="text" class="form-control" id="salary1"
                                                                 required>
                                                         </div>
                                                     </div>
@@ -634,7 +647,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="salperd1">Salary Period:</label>
-                                                            <select class="custom-select form-control" id="salperd1" name="salperd1"
+                                                            <select class="custom-select form-control" id="salperd1"
                                                                 name="country" required>
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="monthly">Monthly </option>
@@ -656,35 +669,158 @@
                                                 <div class="row">
 
                                                     <div class="col-md-12">
-                                                        <h3> Summary </h3>
+                                                        <h2 class="summry"> Summary </h2>
+                                                        <hr class="sum-line">
                                                     </div>
-
+                                                    <div class="col-md-12">
+                                                        <h3 class="sub-headingz"> Candidate Details </h3>
+                                                    </div>
                                                     <div class="col-md-6">
 
 
                                                         <div class="form-group">
-                                                            <label for="participants1">Names of Participants</label>
+                                                            <label for="participants1">First Name: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Last Name: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Gender: </label>
+
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="meetingName1">Name of Meeting :</label>
+                                                            <label for="meetingName1">DOB: </label>
 
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="meetingLocation1">Location :</label>
+                                                            <label for="meetingLocation1">Age: </label>
 
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="participants1">Names of Participants</label>
+                                                            <label for="participants1">Place of Birth: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Phone: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Email: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Position applied (if applicable)
+                                                                or object of the audit: </label>
 
                                                         </div>
                                                     </div>
 
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h3 class="sub-headingz">Current Residential Address: </h3>
 
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="meetingLocation1">Address: </label>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="participants1">City: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">State: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Postal Code: </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Country: </label>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+
+                                                        <div class="form-group">
+                                                            <hr>
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                     
+                                                      
+
+                                                        <div class="form-group">
+                                                            <h3 class="sub-headingz">Employment History: </h3>
+
+                                                        </div>
+
+                                                         <div class="form-group">
+                                                            <label for="meetingLocation1">Contact Current Employer: </label>
+
+                                                         </div>
+
+                                                         <div class="form-group">
+                                                            <label for="participants1">Are you authorized to work in Canada: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                        
+                                                            <label for="participants1">Employer: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <h4 class="sub-headingz">Supervisor: </h4>
+                                                            <label for="participants1">First Name: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">Last Name: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">Phone: </label>
+
+                                                         </div>
+
+                                                         <div class="form-group">
+                                                            <h4 class="sub-headingz">Current Residential Address: </h4>
+                                                            <label for="participants1">  </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                         <h4 class="sub-headingz">Position Occupied: </h4>
+                                                            <label for="participants1">Position: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">Start Date: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">End Date: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">Salary: </label>
+
+                                                         </div>
+                                                         <div class="form-group">
+                                                            <label for="participants1">Salary Period: </label>
+                                                         </div>
                                                 </div>
                                             </fieldset>
 
@@ -801,6 +937,19 @@
     <script src="app-assets/js/core/app-menu.js"></script>
     <script src="app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
+    <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/dateTime/bootstrap-datetimepicker.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js"></script>
+    <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
 
     <!-- BEGIN: Page JS-->
     <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>

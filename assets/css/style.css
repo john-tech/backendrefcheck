@@ -66,3 +66,18 @@ th.cart-desc-col{
 td.cart-total {
     font-weight: 700;
 }
+
+.summry{
+    text-align: center;
+    font-weight: 600;
+}
+.sub-headingz{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sum-line{
+    width: 20%;
+    border: solid 1px #19536a;
+    margin-bottom: 2rem;
+}
