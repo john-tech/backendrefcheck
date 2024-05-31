@@ -15,13 +15,17 @@ if (isset($_POST["cart_id"])) {
     $check_query = "SELECT * FROM cart WHERE pro_id='$cart_id'";
     $check_result = mysqli_query($db, $check_query);
 
-    // Check for errors
+
+    $qry = mysqli_query($db,"SELECT * FROM cart WHERE pro_id='$cart_id'"); // select query
+    $data = mysqli_fetch_array($qry);
+   
+ 
     if (!$check_result) {
         $message = 'Error checking cart: ' . mysqli_error($db);
     } else {
         if (mysqli_num_rows($check_result) > 0) {
             // Cart item exists, update folder
-             $qtyy = mysqli_num_rows($check_result)+1;
+            $qtyy = $data['pro_qty']+1; 
                 $update_query = "UPDATE cart SET pro_qty=$qtyy WHERE pro_id='" . $_POST["cart_id"] . "'";
             if (mysqli_query($db, $update_query)) {
                 $message = 'Data Updated';

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading" lang="en" >
 <!-- BEGIN: Head-->
 
 <head>
@@ -148,8 +148,6 @@ include("Config.php");
     <!-- END: Theme JS-->
     <script>
     $(document).ready(function() {
-
-
         $('.addtocart').on("click", function(event) {
             event.preventDefault(); 
                var cart_id= $(this).attr('id');
