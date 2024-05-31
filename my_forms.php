@@ -60,7 +60,7 @@
         <div class="content-overlay"></div>
         <div class="content-wrapper">
             <div class="content-header row">
-                <div class="content-header-left col-md-6 col-12 mb-2">
+                <!-- <div class="content-header-left col-md-6 col-12 mb-2">
                     <h3 class="content-header-title mb-0">Form Wizard</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
@@ -74,8 +74,8 @@
                             </ol>
                         </div>
                     </div>
-                </div>
-                <div class="content-header-right col-md-6 col-12 mb-md-0 mb-2">
+                </div> -->
+                <!-- <div class="content-header-right col-md-6 col-12 mb-md-0 mb-2">
                     <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
                         <div class="btn-group" role="group">
                             <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right"
@@ -88,7 +88,7 @@
                                 class="feather icon-mail"></i></a><a class="btn btn-outline-primary"
                             href="timeline-center.html"><i class="feather icon-pie-chart"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="content-body">
                 <!-- Form wizard with number tabs section start -->
@@ -96,7 +96,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
+                                <!-- <div class="card-header">
                                     <h4 class="card-title">Form wizard with number tabs</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="fa fa-ellipsis-h font-medium-3"></i></a>
@@ -108,21 +108,21 @@
                                             <li><a data-action="close"><i class="feather icon-x"></i></a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form action="#" class="number-tab-steps wizard-circle">
 
                                             <!-- Step 1 -->
-                                            <h6>Step 1</h6>
+                                            <h6>Subject</h6>
                                             <fieldset>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="firstName1">Report Language:</label>
                                                             <!--   <input type="text" class="form-control" id="firstName1"> -->
-                                                            <select class="custom-select form-control" id="lang1"
-                                                                name="lang1" required>
+                                                            <select class="custom-select form-control" id="r_lang"
+                                                                name="r_lang" required>
                                                                 <option value="" Disabled>Select Language</option>
                                                                 <option value="English">English </option>
                                                                 <option value="French">French</option>
@@ -136,8 +136,8 @@
                                                             <label for="lastName1">Position applied (if applicable) or
                                                                 object of the audit:</label>
 
-                                                            <select class="custom-select form-control" id="position1"
-                                                                name="position1" required>
+                                                            <select class="custom-select form-control" id="pos_app"
+                                                                name="pos_app" required>
                                                                 <option value="" Disabled>Select Position</option>
                                                                 <option value="Employment">Employment</option>
                                                                 <option value="Background Screening">Background
@@ -152,8 +152,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="firstName1">First Name:</label>
-                                                            <input type="text" class="form-control" id="firstName1"
-                                                                name="firstName1" required>
+                                                            <input type="text" class="form-control" id="fname"
+                                                                name="fname" required>
 
                                                         </div>
                                                     </div>
@@ -161,8 +161,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="lastName1">Last Name:</label>
-                                                            <input type="text" class="form-control" id="lastName1"
-                                                                name="lastName1" required>
+                                                            <input type="text" class="form-control" id="lname"
+                                                                name="lname" required>
 
                                                         </div>
                                                     </div>
@@ -173,8 +173,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="date1">Date of Birth :</label>
-                                                            <input type="date" class="form-control" id="date1"
-                                                                name="date1" required>
+                                                            <input type="date" class="form-control" id="dob_dat"
+                                                                name="dob_dat" required>
 
                                                         </div>
                                                     </div>
@@ -203,8 +203,8 @@
                                                         <div class="form-group">
                                                             <label for="gend1">Gender:</label>
 
-                                                            <select class="custom-select form-control" id="gend1"
-                                                                name="gend1" required>
+                                                            <select class="custom-select form-control" id="gender"
+                                                                name="gender" required>
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="male">Male </option>
                                                                 <option value="female">Female</option>
@@ -434,9 +434,10 @@
 
                                                 </div>
                                             </fieldset>
+                                          
 
                                             <!-- Step 2 -->
-                                            <h6>Step 2</h6>
+                                            <h6>Employment</h6>
                                             <fieldset>
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -664,7 +665,7 @@
                                             </fieldset>
 
                                             <!-- Step 3 -->
-                                            <h6>Step 3</h6>
+                                            <h6>Summary</h6>
                                             <fieldset>
                                                 <div class="row">
 
@@ -754,143 +755,398 @@
 
                                                         <div class="form-group">
                                                             <hr>
-                                                            
+
                                                         </div>
 
                                                     </div>
 
                                                     <div class="col-md-12">
-                                                     
-                                                      
+
+
 
                                                         <div class="form-group">
                                                             <h3 class="sub-headingz">Employment History: </h3>
 
                                                         </div>
 
-                                                         <div class="form-group">
-                                                            <label for="meetingLocation1">Contact Current Employer: </label>
+                                                        <div class="form-group">
+                                                            <label for="meetingLocation1">Contact Current Employer:
+                                                            </label>
 
-                                                         </div>
+                                                        </div>
 
-                                                         <div class="form-group">
-                                                            <label for="participants1">Are you authorized to work in Canada: </label>
+                                                        <div class="form-group">
+                                                            <label for="participants1">Are you authorized to work in
+                                                                Canada: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
-                                                        
+                                                        </div>
+                                                        <div class="form-group">
+
                                                             <label for="participants1">Employer: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <h4 class="sub-headingz">Supervisor: </h4>
                                                             <label for="participants1">First Name: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">Last Name: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">Phone: </label>
 
-                                                         </div>
+                                                        </div>
 
-                                                         <div class="form-group">
+                                                        <div class="form-group">
                                                             <h4 class="sub-headingz">Current Residential Address: </h4>
-                                                            <label for="participants1">  </label>
+                                                            <label for="participants1"> </label>
 
-                                                         </div>
-                                                         <div class="form-group">
-                                                         <h4 class="sub-headingz">Position Occupied: </h4>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <h4 class="sub-headingz">Position Occupied: </h4>
                                                             <label for="participants1">Position: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">Start Date: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">End Date: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">Salary: </label>
 
-                                                         </div>
-                                                         <div class="form-group">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="participants1">Salary Period: </label>
-                                                         </div>
-                                                </div>
+                                                        </div>
+                                                    </div>
                                             </fieldset>
 
-                                            <!-- Step 4 -->
-                                            <!-- <h6>Step 4</h6> -->
-                                            <!-- <fieldset>
+                                            <h6>Subject</h6>
+                                            <fieldset>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="meetingName1">Name of Meeting :</label>
-                                                            <input type="text" class="form-control" id="meetingName1">
-                                                        </div>
+                                                            <label for="firstName1">Report Language:</label>
+                                                            <!--   <input type="text" class="form-control" id="firstName1"> -->
+                                                            <select class="custom-select form-control" id="r_lang"
+                                                                name="r_lang" required>
+                                                                <option value="" Disabled>Select Language</option>
+                                                                <option value="English">English </option>
+                                                                <option value="French">French</option>
 
-                                                        <div class="form-group">
-                                                            <label for="meetingLocation1">Location :</label>
-                                                            <input type="text" class="form-control"
-                                                                id="meetingLocation1">
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="participants1">Names of Participants</label>
-                                                            <textarea name="participants" id="participants1" rows="4"
-                                                                class="form-control"></textarea>
+                                                            </select>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="decisions1">Decisions Reached</label>
-                                                            <textarea name="decisions" id="decisions1" rows="4"
-                                                                class="form-control"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Agenda Items :</label>
-                                                            <div class="c-inputs-stacked">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" name="agenda1"
-                                                                        class="custom-control-input" id="item11">
-                                                                    <label class="custom-control-label" for="item11">1st
-                                                                        item</label>
-                                                                </div>
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" name="agenda1"
-                                                                        class="custom-control-input" id="item12">
-                                                                    <label class="custom-control-label" for="item12">2nd
-                                                                        item</label>
-                                                                </div>
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" name="agenda1"
-                                                                        class="custom-control-input" id="item13">
-                                                                    <label class="custom-control-label" for="item13">3rd
-                                                                        item</label>
-                                                                </div>
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" name="agenda1"
-                                                                        class="custom-control-input" id="item14">
-                                                                    <label class="custom-control-label" for="item14">4th
-                                                                        item</label>
-                                                                </div>
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" name="agenda1"
-                                                                        class="custom-control-input" id="item15">
-                                                                    <label class="custom-control-label" for="item15">5th
-                                                                        item</label>
-                                                                </div>
-                                                            </div>
+                                                            <label for="lastName1">Position applied (if applicable) or
+                                                                object of the audit:</label>
+
+                                                            <select class="custom-select form-control" id="pos_app"
+                                                                name="pos_app" required>
+                                                                <option value="" Disabled>Select Position</option>
+                                                                <option value="Employment">Employment</option>
+                                                                <option value="Background Screening">Background
+                                                                    Screening</option>
+                                                                <option value="Folunteering">Volunteering</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </fieldset> -->
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="firstName1">First Name:</label>
+                                                            <input type="text" class="form-control" id="fname"
+                                                                name="fname" required>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="lastName1">Last Name:</label>
+                                                            <input type="text" class="form-control" id="lname"
+                                                                name="lname" required>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="date1">Date of Birth :</label>
+                                                            <input type="date" class="form-control" id="dob_dat"
+                                                                name="dob_dat" required>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="age1">Age:</label>
+                                                            <input type="text" class="form-control" name="age1"
+                                                                id="age1" required>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="pob">Place of Birth:</label>
+                                                            <input type="text" class="form-control" id="pob1"
+                                                                name="pob1">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="gend1">Gender:</label>
+
+                                                            <select class="custom-select form-control" id="gender"
+                                                                name="gender" required>
+                                                                <option value="" Disabled>Select</option>
+                                                                <option value="male">Male </option>
+                                                                <option value="female">Female</option>
+
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h3> Current Residential Address </h3>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="address1">Address :</label>
+                                                            <input type="text" class="form-control" id="addressx"
+                                                                name="addressx" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+
+                                                            <label for="country1">Country:</label>
+
+                                                            <select class="custom-select form-control" id="countryx"
+                                                                name="countryx" required>
+                                                                <option value="" Disabled>Select</option>
+                                                                <option value="Canada">Canada </option>
+                                                                <option value="USA">USA</option>
+
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="state1">State:</label>
+                                                            <input type="text" class="form-control" id="statex"
+                                                                name="statex" required>
+
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+
+                                                            <label for="city1">City:</label>
+                                                            <input type="text" class="form-control" id="cityu"
+                                                                id="cityu" required>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="postalc1">Postal Code:</label>
+                                                            <input type="tel" class="form-control" id="postaladd"
+                                                                name="postaladd" required>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="phoneNumber1">Phone Number :</label>
+                                                            <input type="tel" class="form-control" id="phoneNumer1"
+                                                                name="phoneNumer1" required>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="email1">Email:</label>
+                                                            <input type="email" class="form-control" id="emel1"
+                                                                name="emel1" require>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="insurance1">Social Insurance Number:</label>
+                                                            <input type="text" class="form-control" id="insuranc1"
+                                                                id="insuranc1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <!-- <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h3> Current Residential Address </h3>
+                                                    </div>
+                                                </div> -->
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="address1">Have you lived at your current address
+                                                                for the last 5 years?
+                                                            </label> <br>
+                                                            <input type="radio" class="radio" name="yes1" value="yes"
+                                                                id="y1" />
+                                                            <label for="y1">Yes</label>
+                                                            <input type="radio" class="radio" name="no1" value="no"
+                                                                id="n1" />
+                                                            <label for="n1">No</label>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="street1">Street:</label>
+                                                            <input type="text" class="form-control" id="street1">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="suite1">Suite:</label>
+                                                            <input type="text" class="form-control" id="suite1">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+
+                                                            <label for="civic1">Civic:</label>
+                                                            <input type="text" class="form-control" id="civic1">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="country1">Country:</label>
+
+                                                            <select class="custom-select form-control" id="country1"
+                                                                name="country" required>
+                                                                <option value="" Disabled>Select</option>
+                                                                <option value="canada">Canada </option>
+                                                                <option value="USA">USA</option>
+
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="state1">State:</label>
+                                                            <input type="text" class="form-control" id="state1"
+                                                                required>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="city2">City:</label>
+                                                            <input type="text" class="form-control" id="city2" required>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="pcode2">Postal Code:</label>
+                                                            <input type="text" class="form-control" id="pcode2"
+                                                                required>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label for="msg1">Message:</label>
+
+                                                            <textarea name="msg1" id="msg1" rows="4"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </fieldset>
                                         </form>
                                     </div>
                                 </div>
