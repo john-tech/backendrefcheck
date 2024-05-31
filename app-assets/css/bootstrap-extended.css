@@ -12,7 +12,6 @@ a:focus {
 
 .font-medium-1 {
   font-size: 1.1rem !important; }
-
 .font-medium-2 {
   font-size: 1.2rem !important; }
 
@@ -221,7 +220,7 @@ form {
   form label {
     color: #2e405c; }
   form .form-group {
-    margin-bottom: 1.5rem; }
+/*     margin-bottom: 1.5rem; } */
   form .form-control {
     border: 1px solid #ccd6e6;
     color: #3f587e; }
