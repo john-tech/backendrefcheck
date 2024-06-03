@@ -110,6 +110,7 @@ $_SESSION['cart'] = $id;
 
                                     <h3 class="cart-pg-tittle">Your Shopping Cart
                                     </h3>
+
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
@@ -132,7 +133,7 @@ $_SESSION['cart'] = $id;
                                                
                                                     $amountx = $data['org_pric'];
                                                     $qty = intval($data['pro_qty']);
-                                                   echo $subtotal = $qty * $amountx;
+                                                    $subtotal = $qty * $amountx;
                                                     ?>
                                                 <td><img src="uploads/<?= $data['imag'];?>" width="100" height="50">
                                                 </td>
@@ -140,8 +141,9 @@ $_SESSION['cart'] = $id;
                                                     <h3 class="cart-prod-tittle"><?= $data['name'];?></h3>
                                                     <p> <?= $data['smal_desc'];?></p>
                                                 </td>
-                                                <td><input type="number" name="name" value="<?= $data['pro_qty']; ?>" min="1"
-                                                        max="10" class="form-control"></td>
+                                                <td><input type="number" id="myTextBox" name="proqty"
+                                                        value="<?= $data['pro_qty']; ?>" min="1" max="10"
+                                                        class="form-control"></td>
 
                                                 <td> <?= formatCurrency($amount);?></td>
                                                 <td><?= formatCurrency($amount);?></td>
@@ -259,7 +261,33 @@ $_SESSION['cart'] = $id;
     <script src="app-assets/js/core/app-menu.js"></script>
     <script src="app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <script>
+    $(document).ready(function() {
+        $("#myTextBox").on("input", function() { 
+            update_val =$(this).val()
+            id_for_val ='<?php echo $id;?>';
+            console.log(update_val);
+            event.preventDefault();  
+                $.ajax({
+                    url: "cart/update_val.php",
+                    method: "POST", 
+                    data: {
+                        update_val: update_val,
+                        id_for_val: id_for_val
+                        },
+                    beforeSend: function() {
+                        $('#insert').val("Inserting");
+                    },
+                    success: function(data) {
+                        console.log(data); 
+                    }
+                });
+         
+        });
+    }); 
+    </script>
     <!-- BEGIN: Page JS-->
     <script src="app-assets/js/scripts/pages/dashboard-analytics.js"></script>
     <!-- END: Page JS-->

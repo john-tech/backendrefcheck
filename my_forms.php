@@ -1,32 +1,61 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" >
+<html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-   
+    <meta name="description"
+        content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
     <title>Form Wizard - Stack Responsive Bootstrap 4 Admin Template</title>
-     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
-        rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css">  
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css"> 
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css"> 
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/icheck.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/toggle/switchery.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
+
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css"> 
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/toggle/switchery.min.css"> 
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/pickers/daterange/daterange.css"> 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/pickers/daterange/daterange.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/switch.css">
+    <!-- END: Page CSS-->
 
- 
-</head> 
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
 <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu"
     data-col="2-columns">
 
@@ -38,8 +67,8 @@
         <div class="content-overlay"></div>
         <div class="content-wrapper">
             <div class="content-header row">
-                <!-- <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title mb-0">Form Wizard</h3>
+                <div class="content-header-left col-md-6 col-12 mb-2">
+                    <h3 class="content-header-title mb-0">Employment Verification</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
@@ -47,13 +76,13 @@
                                 </li>
                                 <li class="breadcrumb-item"><a href="#">Page</a>
                                 </li>
-                                <li class="breadcrumb-item active">Form Wizard
+                                <li class="breadcrumb-item active">Employment Verification
                                 </li>
                             </ol>
                         </div>
                     </div>
-                </div> -->
-                <!-- <div class="content-header-right col-md-6 col-12 mb-md-0 mb-2">
+                </div>
+                <div class="content-header-right col-md-6 col-12 mb-md-0 mb-2">
                     <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
                         <div class="btn-group" role="group">
                             <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right"
@@ -66,7 +95,7 @@
                                 class="feather icon-mail"></i></a><a class="btn btn-outline-primary"
                             href="timeline-center.html"><i class="feather icon-pie-chart"></i></a>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="content-body">
                 <!-- Form wizard with number tabs section start -->
@@ -94,7 +123,7 @@
                                             <!-- Step 1 -->
                                             <h6>Subject</h6>
                                             <fieldset>
-                                                <div class="row"> 
+                                                <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="firstName1">Report Language:</label>
@@ -412,7 +441,7 @@
 
                                                 </div>
                                             </fieldset>
-                                          
+
 
                                             <!-- Step 2 -->
                                             <h6>Employment</h6>
@@ -805,326 +834,165 @@
                                                     </div>
                                             </fieldset>
 
-                                            <h6>Subject</h6>
+                                            <!-- Step 4 -->
+                                            <h6>Signature</h6>
                                             <fieldset>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="firstName1">Report Language:</label>
-                                                            <!--   <input type="text" class="form-control" id="firstName1"> -->
-                                                            <select class="custom-select form-control" id="r_lang"
-                                                                name="r_lang" required>
-                                                                <option value="" Disabled>Select Language</option>
-                                                                <option value="English">English </option>
-                                                                <option value="French">French</option>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="lastName1">Position applied (if applicable) or
-                                                                object of the audit:</label>
-
-                                                            <select class="custom-select form-control" id="pos_app"
-                                                                name="pos_app" required>
-                                                                <option value="" Disabled>Select Position</option>
-                                                                <option value="Employment">Employment</option>
-                                                                <option value="Background Screening">Background
-                                                                    Screening</option>
-                                                                <option value="Folunteering">Volunteering</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="firstName1">First Name:</label>
-                                                            <input type="text" class="form-control" id="fname"
-                                                                name="fname" required>
 
-                                                        </div>
+
+                                                    <div class="card-content collapse show">
+
                                                     </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="lastName1">Last Name:</label>
-                                                            <input type="text" class="form-control" id="lname"
-                                                                name="lname" required>
 
-                                                        </div>
-                                                    </div>
                                                 </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="date1">Date of Birth :</label>
-                                                            <input type="date" class="form-control" id="dob_dat"
-                                                                name="dob_dat" required>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="age1">Age:</label>
-                                                            <input type="text" class="form-control" name="age1"
-                                                                id="age1" required>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="pob">Place of Birth:</label>
-                                                            <input type="text" class="form-control" id="pob1"
-                                                                name="pob1">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="gend1">Gender:</label>
-
-                                                            <select class="custom-select form-control" id="gender"
-                                                                name="gender" required>
-                                                                <option value="" Disabled>Select</option>
-                                                                <option value="male">Male </option>
-                                                                <option value="female">Female</option>
-
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr>
 
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <h3> Current Residential Address </h3>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="address1">Address :</label>
-                                                            <input type="text" class="form-control" id="addressx"
-                                                                name="addressx" required>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
                                                         <div class="form-group">
 
-                                                            <label for="country1">Country:</label>
 
-                                                            <select class="custom-select form-control" id="countryx"
-                                                                name="countryx" required>
-                                                                <option value="" Disabled>Select</option>
-                                                                <option value="Canada">Canada </option>
-                                                                <option value="USA">USA</option>
+                                                            <div class="controls">
+                                                                <label for="participants1">I hereby give authorization
+                                                                    to RC 360, to obtain the following information (as
+                                                                    selected below â€“ check all that apply): </label>
+                                                                <br>
+                                                                <input type="checkbox" name="single_switchery"
+                                                                    class="switchery" required>
+                                                                I hereby consent to the release of details regarding my
+                                                                employment history, including employment data
+                                                                verifications from any employer/position I have
+                                                                previously held.
 
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="state1">State:</label>
-                                                            <input type="text" class="form-control" id="statex"
-                                                                name="statex" required>
-
+                                                            </div>
 
 
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-
-                                                            <label for="city1">City:</label>
-                                                            <input type="text" class="form-control" id="cityu"
-                                                                id="cityu" required>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="postalc1">Postal Code:</label>
-                                                            <input type="tel" class="form-control" id="postaladd"
-                                                                name="postaladd" required>
-
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="phoneNumber1">Phone Number :</label>
-                                                            <input type="tel" class="form-control" id="phoneNumer1"
-                                                                name="phoneNumer1" required>
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="email1">Email:</label>
-                                                            <input type="email" class="form-control" id="emel1"
-                                                                name="emel1" require>
-
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="insurance1">Social Insurance Number:</label>
-                                                            <input type="text" class="form-control" id="insuranc1"
-                                                                id="insuranc1">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr>
-
-                                                <!-- <div class="row">
                                                     <div class="col-md-12">
-                                                        <h3> Current Residential Address </h3>
-                                                    </div>
-                                                </div> -->
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
                                                         <div class="form-group">
-                                                            <label for="address1">Have you lived at your current address
-                                                                for the last 5 years?
-                                                            </label> <br>
-                                                            <input type="radio" class="radio" name="yes1" value="yes"
-                                                                id="y1" />
-                                                            <label for="y1">Yes</label>
-                                                            <input type="radio" class="radio" name="no1" value="no"
-                                                                id="n1" />
-                                                            <label for="n1">No</label>
+                                                            <h3 class="sub-headingz">Release & Discharge: </h3>
+                                                            <p> I understand that the information obtained as a result
+                                                                of this authorization will be held in the strictest of
+                                                                confidentiality by Reference Check 360&deg; and will be
+                                                                maintained in accordance with their Privacy Policies.
+                                                                The information obtained will only be used in accordance
+                                                                with and to satisfy the scope for which this
+                                                                authorization has been signed. I, for myself, my heirs,
+                                                                executors, administrators, successors and assigns,
+                                                                hereby release, waive and forever discharge anyone who
+                                                                provides information in relation to this release, from
+                                                                any and all liability for the disclosure of information
+                                                                to Mintz including all claims, demands, damages, costs,
+                                                                actions and causes of action, howsoever caused. </p>
+                                                            <input type="checkbox" name="single_switchery"
+                                                                class="switchery" required>
+                                                            I have read the above and agree and authorize this handling
+                                                            by Reference Check 360&deg;. I Agree
+
+
 
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="street1">Street:</label>
-                                                            <input type="text" class="form-control" id="street1">
+
+                                                            <section class="signature-component">
+
+                                                                <h2>Draw Signature here</h2>
+
+                                                                <canvas id="signature-pad" height="200"></canvas>
+
+                                                                <div>
+                                                                    <button id="save">Save</button>
+                                                                    <button id="clear">Clear</button>
+                                                                    <button id="showPointsToggle">Show points?</button>
+                                                                </div>
+
+
+                                                            </section>
+                                                            <!-- partial -->
+                                                            <script
+                                                                src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'>
+                                                            </script>
+                                                            <script src="./app-assets/js/scripts/sign-pad/script.js">
+                                                            </script>
 
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="suite1">Suite:</label>
-                                                            <input type="text" class="form-control" id="suite1">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-
-                                                            <label for="civic1">Civic:</label>
-                                                            <input type="text" class="form-control" id="civic1">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="country1">Country:</label>
-
-                                                            <select class="custom-select form-control" id="country1"
-                                                                name="country" required>
-                                                                <option value="" Disabled>Select</option>
-                                                                <option value="canada">Canada </option>
-                                                                <option value="USA">USA</option>
-
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="state1">State:</label>
-                                                            <input type="text" class="form-control" id="state1"
-                                                                required>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="city2">City:</label>
-                                                            <input type="text" class="form-control" id="city2" required>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="pcode2">Postal Code:</label>
-                                                            <input type="text" class="form-control" id="pcode2"
-                                                                required>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="msg1">Message:</label>
-
-                                                            <textarea name="msg1" id="msg1" rows="4"
-                                                                class="form-control"></textarea>
-                                                        </div>
-                                                    </div>
-
-
                                                 </div>
                                             </fieldset>
+
+
+                                            <!-- Step 5 -->
+                                            <h6>Files Upload</h6>
+                                            <fieldset>
+
+                                                <div class="row">
+                                                    <div class="card-content collapse show">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+
+                                                            <div class="controls">
+                                                                <label for="participants1">Some basic information is
+                                                                    required in order to initiate the background
+                                                                    screening process. We recommend candidates to
+                                                                    provide any supporting documents like resumes,
+                                                                    copies of degrees, and letters of recommendation,
+                                                                    which allow us to obtain results faster: </label>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+
+                                                            <div class="controls">
+                                                                <input type="file" name="file" placeholder="Resume">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h3 class="sub-headingz">OR </h3>
+
+                                                            <input type="checkbox" name="single_switchery"
+                                                                class="switchery" required>
+                                                            I don't have any document to upload
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+                                            </fieldset>
+
                                         </form>
                                     </div>
                                 </div>
@@ -1146,9 +1014,10 @@
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-dark navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-                class="float-md-left d-block d-md-inline-block">Copyright &copy; 2020 <a
+                class="float-md-left d-block d-md-inline-block">Copyright &copy; 2024 <a
                     class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio"
-                    target="_blank">PIXINVENT </a></span><span class="float-md-right d-none d-lg-block">Hand-crafted &
+                    target="_blank">Reference Check 360 </a></span><span
+                class="float-md-right d-none d-lg-block">Hand-crafted &
                 Made with <i class="feather icon-heart pink"></i></span></p>
     </footer>
     <!-- END: Footer-->
@@ -1159,10 +1028,15 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>    
+    <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
     <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+
+
     <!-- END: Page Vendor JS-->
-    <script src="app-assets/vendors/js/forms/toggle/switchery.min.js"></script>
 
     <!-- BEGIN: Theme JS-->
     <script src="app-assets/js/core/app-menu.js"></script>
@@ -1175,15 +1049,19 @@
     <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
     <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
     <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
-    <!-- END: Page Vendor JS--> 
+    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
+
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <!-- BEGIN: Page JS-->
     <script src="app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js"></script>
     <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
 
     <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/forms/switch.js"></script>
     <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>
-    <script src="app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js"></script>
-         
+    <!-- END: Page JS-->
+
 </body>
 <!-- END: Body-->
 

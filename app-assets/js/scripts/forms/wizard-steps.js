@@ -71,7 +71,7 @@ $(".steps-validation").steps({
             return true;
         }
         // Forbid next action on "Warning" step if the user is to young
-        if (newIndex === 3 && Number($("#age-2").val()) < 18)
+        if (newIndex === 4 && Number($("#age-2").val()) < 18)
         {
             return false;
         }
