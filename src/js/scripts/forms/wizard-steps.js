@@ -16,9 +16,9 @@ $(".number-tab-steps").steps({
     labels: {
         finish: 'Submit'
     },
-    onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
-    }
+    // onFinished: function (event, currentIndex) {
+    //     alert("Form submitted.");
+    // }
 });
 
 // Wizard tabs with icons setup
@@ -30,9 +30,10 @@ $(".icons-tab-steps").steps({
     labels: {
         finish: 'Submit'
     },
-    onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
-    }
+    // onFinished: function (event, currentIndex) {
+    //     // alert("Form submitted.");
+    //     console.log("2")
+    // }
 });
 
 // Vertical tabs form wizard setup
@@ -45,9 +46,10 @@ $(".vertical-tab-steps").steps({
     labels: {
         finish: 'Submit'
     },
-    onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
-    }
+    // onFinished: function (event, currentIndex) {
+    //     // alert("Form submitted.");
+    //     console.log("1")
+    // }
 });
 
 // Validate steps wizard

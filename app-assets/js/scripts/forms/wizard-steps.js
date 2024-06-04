@@ -17,7 +17,28 @@ $(".number-tab-steps").steps({
         finish: 'Submit'
     },
     onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
+        // alert("Form submitted.");
+        
+        console.log("7") 
+            alert("as")
+                    // event.preventDefault(); 
+                    //     $.ajax({
+                    //         url: "product_api/emp_ver.php",
+                    //         method: "POST",
+                    //         data: $('#insert_form').serialize(),
+                    //         beforeSend: function() {
+                    //             $('#insert').val("Inserting");
+                    //         },
+                    //         success: function(data) {
+                    //             console.log(data);
+                    //             $('#insert_form')[0].reset();
+                    //             // $('#zoomupModal').modal('hide');
+                    //             // $('#employee_table').html(data);
+                    //             // $("#html5-extension").load(" #html5-extension");
+                    //             // window.location.reload();
+                    //         }
+                    //     });  
+
     }
 });
 
@@ -30,9 +51,10 @@ $(".icons-tab-steps").steps({
     labels: {
         finish: 'Submit'
     },
-    onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
-    }
+    // onFinished: function (event, currentIndex) {
+    //     // alert("Form submitted.");
+    //     console.log("4")
+    // }
 });
 
 // Vertical tabs form wizard setup
@@ -45,9 +67,10 @@ $(".vertical-tab-steps").steps({
     labels: {
         finish: 'Submit'
     },
-    onFinished: function (event, currentIndex) {
-        alert("Form submitted.");
-    }
+    // onFinished: function (event, currentIndex) {
+    //     // alert("Form submitted.");
+    //     console.log("5")
+    // }
 });
 
 // Validate steps wizard
@@ -92,7 +115,27 @@ $(".steps-validation").steps({
     },
     onFinished: function (event, currentIndex)
     {
-        alert("Submitted!");
+         // alert("Form submitted.");
+        
+         console.log("7") 
+         alert("asifaslam")
+                 event.preventDefault(); 
+                     $.ajax({
+                         url: "product_api/emp_ver.php",
+                         method: "POST",
+                         data: $('#insert_form').serialize(),
+                         beforeSend: function() {
+                             $('#insert').val("Inserting");
+                         },
+                         success: function(data) {
+                             console.log(data);
+                             $('#insert_form')[0].reset();
+                             // $('#zoomupModal').modal('hide');
+                             // $('#employee_table').html(data);
+                             // $("#html5-extension").load(" #html5-extension");
+                             // window.location.reload();
+                         }
+                     });  
     }
 });
 

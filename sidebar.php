@@ -47,7 +47,7 @@ include("sessioninput.php");
                 <li class="navigation-header"><span>Reference Check 360°</span><i class=" feather icon-minus" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
                 </li>
                 <li class="nav-item"><a href="products.php"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Our Services</span></a></li>
-                <li class="nav-item"><a href="my-cart.php"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Cart</span></a></li>
+                <li class="nav-item"><a href="data-table.php"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">My Order History</span></a></li>
                  
             </ul>
         <div class="ps__rail-x" style="left: 0px; bottom: -15px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 15px; height: 730px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 5px; height: 250px;"></div></div></div>

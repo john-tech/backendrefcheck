@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" >
+<html class="loading" lang="en">
 <!-- BEGIN: Head-->
 
 <head>
@@ -16,35 +16,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon-32.png">
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- BEGIN: Vendor CSS-->
+        rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/icheck.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/custom.css">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
-    <!-- END: Theme CSS-->
-
-    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css"> 
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/login-register.css">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/login-register.css"> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- END: Custom CSS-->
 
 </head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
 
 <body class="vertical-layout vertical-menu 1-column  bg-cyan bg-lighten-2 blank-page blank-page" data-open="click"
     data-menu="vertical-menu" data-col="1-column">
@@ -76,7 +61,8 @@
 
 
                                     <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
-                                        <span>Welcome To Reference Check 360°</span></p>
+                                        <span>Welcome To Reference Check 360°</span>
+                                    </p>
                                     <div class="card-body pt-0">
                                         <form class="form-horizontal" action="index.html">
                                             <fieldset class="form-group floating-label-form-group">
@@ -218,7 +204,8 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="email1">Email: (This will be your Username)</label>
+                                                            <label for="email1">Email: (This will be your
+                                                                Username)</label>
                                                             <input type="email" class="form-control" id="email1"
                                                                 require>
 
@@ -244,8 +231,6 @@
                                                             <label for="confirmpassword">Confirm Password :</label>
                                                             <input type="password" class="form-control" id="cpassword1"
                                                                 required>
-
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -261,35 +246,41 @@
 
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                     <div class="form-group">
-                                                        <select class="custom-select form-control" id="s-question1"
+                                                        <div class="form-group">
+                                                            <select class="custom-select form-control" id="s-question1"
                                                                 name="s-question1" required>
                                                                 <option value="" selected disabled hidden>Select
                                                                 </option>
-                                                                <option value="Who was your favorite teacher in school?">Who was your favorite teacher in school? </option>
-                                                                <option value="What was the name of your first pet?">What was the name of your first pet?</option>What is your mother’s maiden name?
-                                                                <option value="What is your mother’s maiden name?">What is your mother’s maiden name?</option>
+                                                                <option
+                                                                    value="Who was your favorite teacher in school?">Who
+                                                                    was your favorite teacher in school? </option>
+                                                                <option value="What was the name of your first pet?">
+                                                                    What was the name of your first pet?</option>What is
+                                                                your mother’s maiden name?
+                                                                <option value="What is your mother’s maiden name?">What
+                                                                    is your mother’s maiden name?</option>
                                                             </select>
-                                                          </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                    <div class="form-group">
+                                                        <div class="form-group">
                                                             <label for="Answer">Answer :</label>
                                                             <input type="answer-1" class="form-control" id="answer-1"
                                                                 required>
-                                                                
-                                                        
-                                                    </div>
+
+
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                    <div class="form-group">
-                                                    <button type="submit" class="btn btn-outline-primary btn-block"><i
-                                                    class="feather icon-user"></i> Register</button>
-                                                                
-                                                        
+                                                        <div class="form-group">
+                                                            <button type="submit"
+                                                                class="btn btn-outline-primary btn-block"><i
+                                                                    class="feather icon-user"></i> Register</button>
+
+
+                                                        </div>
                                                     </div>
-                                                    </div>
-                                                    
+
                                                 </div>
 
 
@@ -318,11 +309,11 @@
                                                         href="recover-password.html" class="card-link">Forgot
                                                         Password?</a></div>
                                             </div> -->
-                                            
+
                                         </form>
                                     </div>
                                     <div class="card-body pt-0">
-                                    
+
                                         <a href="login-with-bg.php" class="btn btn-outline-danger btn-block"><i
                                                 class="feather icon-unlock"></i> Login</a>
                                     </div>
@@ -333,24 +324,11 @@
                 </section>
             </div>
         </div>
-    </div>
-    <!-- END: Content-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
+    </div> 
+    <script src="app-assets/vendors/js/vendors.min.js"></script> 
+    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script> 
     <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/core/app.js"></script> 
     <script src="app-assets/js/scripts/forms/form-login-register.js"></script>
     <!-- END: Page JS-->
 

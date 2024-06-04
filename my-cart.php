@@ -51,9 +51,9 @@
 <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu"
     data-col="2-columns">
     <?php
-include("Config.php"); 
-$id = $_GET['id'];
-$_SESSION['cart'] = $id; 
+    include("Config.php"); 
+    $id = $_GET['id'];
+    $_SESSION['cart'] = $id; 
     $qry = mysqli_query($db,"SELECT bg_products.* , cart.pro_qty FROM cart INNER JOIN bg_users ON cart.user_id = bg_users.userid INNER JOIN bg_products ON cart.pro_id = bg_products.pro_id WHERE bg_products.pro_id = '$id';"); // select query
     $data = mysqli_fetch_array($qry); 
 
@@ -289,7 +289,7 @@ $_SESSION['cart'] = $id;
     }); 
     </script>
     <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+    <!-- <script src="app-assets/js/scripts/pages/dashboard-analytics.js"></script> -->
     <!-- END: Page JS-->
 
 </body>

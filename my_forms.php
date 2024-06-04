@@ -11,46 +11,30 @@
     <meta name="keywords"
         content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Form Wizard - Stack Responsive Bootstrap 4 Admin Template</title>
+    <title>Form</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
-    <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
-    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">  
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/icheck.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/toggle/switchery.min.css">
-
-
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
-
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/toggle/switchery.min.css"> 
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css"> 
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
-    <!-- END: Theme CSS-->
-
-    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css"> 
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/pickers/daterange/daterange.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/switch.css">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- END: Custom CSS-->
-
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/switch.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 </head>
 <!-- END: Head-->
 
@@ -61,7 +45,39 @@
 
 
     <?php include './sidebar.php' ?>
+    <?php
+    include("Config.php"); 
+    $id = $_GET['id'];
+    $_SESSION['cart'] = $id; 
+    $qry = mysqli_query($db,"SELECT bg_products.* , cart.pro_qty FROM cart INNER JOIN bg_users ON cart.user_id = bg_users.userid INNER JOIN bg_products ON cart.pro_id = bg_products.pro_id WHERE bg_products.pro_id = '$id';"); // select query
+    $data = mysqli_fetch_array($qry); 
 
+
+
+    // 
+
+
+
+//     if(isset($_GET['action']) && $_GET['action']=="add"){
+// 	$id=intval($_GET['id']);
+// 	if(isset($_SESSION['cart'][$id])){
+// 		$_SESSION['cart'][$id]['quantity']++;
+// 	}else{
+// 		$sql_p="SELECT * FROM bg_products WHERE pro_id={$id}";
+// 		$query_p=mysqli_query($db,$sql_p);
+// 		if(mysqli_num_rows($query_p)!=0){
+// 			$row_p=mysqli_fetch_array($query_p);
+// 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
+		
+// 		}else{
+// 			$message="Product ID is invalid";
+// 		}
+// 	}
+// 		echo "<script>alert('Product has been added to the cart')</script>";
+// 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
+// }
+
+?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -118,7 +134,7 @@
                                 </div> -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form action="#" class="number-tab-steps wizard-circle">
+                                        <form id="insert_form" class="steps-validation wizard-circle">
 
                                             <!-- Step 1 -->
                                             <h6>Subject</h6>
@@ -126,14 +142,14 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <input type="hidden" id="services"name="services" value="<?= $data['name'];?>">
                                                             <label for="firstName1">Report Language:</label>
                                                             <!--   <input type="text" class="form-control" id="firstName1"> -->
-                                                            <select class="custom-select form-control" id="r_lang"
-                                                                name="r_lang" required>
+                                                            <select class="custom-select form-control"  id="r_lang"
+                                                                name="r_lang" >
                                                                 <option value="" Disabled>Select Language</option>
                                                                 <option value="English">English </option>
                                                                 <option value="French">French</option>
-
                                                             </select>
                                                         </div>
                                                     </div>
@@ -144,7 +160,7 @@
                                                                 object of the audit:</label>
 
                                                             <select class="custom-select form-control" id="pos_app"
-                                                                name="pos_app" required>
+                                                                name="pos_app" >
                                                                 <option value="" Disabled>Select Position</option>
                                                                 <option value="Employment">Employment</option>
                                                                 <option value="Background Screening">Background
@@ -159,8 +175,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="firstName1">First Name:</label>
-                                                            <input type="text" class="form-control" id="fname"
-                                                                name="fname" required>
+                                                            <input type="text" class="form-control " id="fname"
+                                                                name="fname" >
 
                                                         </div>
                                                     </div>
@@ -169,7 +185,7 @@
                                                         <div class="form-group">
                                                             <label for="lastName1">Last Name:</label>
                                                             <input type="text" class="form-control" id="lname"
-                                                                name="lname" required>
+                                                                name="lname" >
 
                                                         </div>
                                                     </div>
@@ -179,9 +195,12 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="date1">Date of Birth :</label>
-                                                            <input type="date" class="form-control" id="dob_dat"
-                                                                name="dob_dat" required>
+                                                            <label for="date1">Date of Birth :</label> 
+                                                                <input type="text" 
+                                                                class="form-control pickadate picker__input picker__input--active"
+                                                                placeholder="Date Of Birth" readonly=""
+                                                                id="dob_dat" name="dob_dat" aria-haspopup="true"
+                                                                aria-readonly="false" aria-owns="P1043209353_root">
 
                                                         </div>
                                                     </div>
@@ -190,7 +209,7 @@
                                                         <div class="form-group">
                                                             <label for="age1">Age:</label>
                                                             <input type="text" class="form-control" name="age1"
-                                                                id="age1" required>
+                                                                id="age1" >
 
                                                         </div>
                                                     </div>
@@ -211,7 +230,7 @@
                                                             <label for="gend1">Gender:</label>
 
                                                             <select class="custom-select form-control" id="gender"
-                                                                name="gender" required>
+                                                                name="gender" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="male">Male </option>
                                                                 <option value="female">Female</option>
@@ -236,17 +255,17 @@
                                                         <div class="form-group">
                                                             <label for="address1">Address :</label>
                                                             <input type="text" class="form-control" id="addressx"
-                                                                name="addressx" required>
+                                                                name="addressx" >
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
 
-                                                            <label for="country1">Country:</label>
+                                                            <label for="countryx">Country:</label>
 
                                                             <select class="custom-select form-control" id="countryx"
-                                                                name="countryx" required>
+                                                                name="countryx" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="Canada">Canada </option>
                                                                 <option value="USA">USA</option>
@@ -262,7 +281,7 @@
                                                         <div class="form-group">
                                                             <label for="state1">State:</label>
                                                             <input type="text" class="form-control" id="statex"
-                                                                name="statex" required>
+                                                                name="statex" >
 
 
 
@@ -274,7 +293,7 @@
 
                                                             <label for="city1">City:</label>
                                                             <input type="text" class="form-control" id="cityu"
-                                                                id="cityu" required>
+                                                                name="cityu" >
 
                                                         </div>
                                                     </div>
@@ -286,7 +305,7 @@
                                                         <div class="form-group">
                                                             <label for="postalc1">Postal Code:</label>
                                                             <input type="tel" class="form-control" id="postaladd"
-                                                                name="postaladd" required>
+                                                                name="postaladd">
 
 
                                                         </div>
@@ -296,7 +315,7 @@
                                                         <div class="form-group">
                                                             <label for="phoneNumber1">Phone Number :</label>
                                                             <input type="tel" class="form-control" id="phoneNumer1"
-                                                                name="phoneNumer1" required>
+                                                                name="phoneNumer1" >
 
 
                                                         </div>
@@ -306,11 +325,9 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="email1">Email:</label>
+                                                            <label for="emel1">Email:</label>
                                                             <input type="email" class="form-control" id="emel1"
                                                                 name="emel1" require>
-
-
                                                         </div>
                                                     </div>
 
@@ -318,7 +335,7 @@
                                                         <div class="form-group">
                                                             <label for="insurance1">Social Insurance Number:</label>
                                                             <input type="text" class="form-control" id="insuranc1"
-                                                                id="insuranc1">
+                                                                name="insuranc1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -330,7 +347,7 @@
                                                     </div>
                                                 </div> -->
 
-
+<!-- 
                                                 <div class="row">
                                                     <div class="col-md-6">
 
@@ -338,12 +355,12 @@
                                                             <label for="address1">Have you lived at your current address
                                                                 for the last 5 years?
                                                             </label> <br>
-                                                            <input type="radio" class="radio" name="yes1" value="yes"
-                                                                id="y1" />
-                                                            <label for="y1">Yes</label>
-                                                            <input type="radio" class="radio" name="no1" value="no"
-                                                                id="n1" />
-                                                            <label for="n1">No</label>
+                                                            <input type="radio" id="yes" name="fav_language"
+                                                                value="Yes">
+                                                             <label for="yes">Yes</label>
+                                                             <input type="radio" id="no" name="fav_language"
+                                                                value="No">
+                                                             <label for="css">No</label>
 
                                                         </div>
                                                     </div>
@@ -351,7 +368,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="street1">Street:</label>
-                                                            <input type="text" class="form-control" id="street1">
+                                                            <input type="text" class="form-control" id="street1"name="street1">
 
                                                         </div>
                                                     </div>
@@ -361,7 +378,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="suite1">Suite:</label>
-                                                            <input type="text" class="form-control" id="suite1">
+                                                            <input type="text" class="form-control" id="suite1"name="suite1">
 
                                                         </div>
                                                     </div>
@@ -370,7 +387,7 @@
                                                         <div class="form-group">
 
                                                             <label for="civic1">Civic:</label>
-                                                            <input type="text" class="form-control" id="civic1">
+                                                            <input type="text" class="form-control" id="civic1" name="civic1">
 
                                                         </div>
                                                     </div>
@@ -381,10 +398,10 @@
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
-                                                            <label for="country1">Country:</label>
+                                                            <label for="countrijex">Country:</label>
 
-                                                            <select class="custom-select form-control" id="country1"
-                                                                name="country" required>
+                                                            <select class="custom-select form-control" id="countrijex"
+                                                                name="countrijex" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="canada">Canada </option>
                                                                 <option value="USA">USA</option>
@@ -397,9 +414,9 @@
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
-                                                            <label for="state1">State:</label>
-                                                            <input type="text" class="form-control" id="state1"
-                                                                required>
+                                                            <label for="statjex">State:</label>
+                                                            <input type="text" class="form-control" id="statjex"name="statjex"
+                                                                >
 
                                                         </div>
 
@@ -411,7 +428,7 @@
 
                                                         <div class="form-group">
                                                             <label for="city2">City:</label>
-                                                            <input type="text" class="form-control" id="city2" required>
+                                                            <input type="text" class="form-control" id="city2" name="city2" >
 
                                                         </div>
                                                     </div>
@@ -420,8 +437,8 @@
 
                                                         <div class="form-group">
                                                             <label for="pcode2">Postal Code:</label>
-                                                            <input type="text" class="form-control" id="pcode2"
-                                                                required>
+                                                            <input type="text" class="form-control" id="pcode2" name="pcode2"
+                                                                >
                                                         </div>
 
                                                     </div>
@@ -439,21 +456,21 @@
                                                     </div>
 
 
-                                                </div>
+                                                </div> -->
                                             </fieldset>
 
 
                                             <!-- Step 2 -->
                                             <h6>Employment</h6>
                                             <fieldset>
+                                            <div class="duplicatable-fieldset" id="fieldset-container">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="gend1">Can we contact your current
-                                                                employer?</label>
+                                                            <label for="contemp">Can we contact your current employer?</label>
 
                                                             <select class="custom-select form-control" id="contemp"
-                                                                name="position" required>
+                                                                name="contemp" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="yes">Yes </option>
                                                                 <option value="no">No</option>
@@ -464,15 +481,13 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="gend1">Can we contact your current
-                                                                employer?</label>
+                                                            <label for="wcanada">Are you authorized to work in Canada?</label>
 
-                                                            <select class="custom-select form-control" id="contemp"
-                                                                name="position" required>
+                                                            <select class="custom-select form-control" id="wcanada"
+                                                                name="wcanada" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="yes">Yes </option>
                                                                 <option value="no">No</option>
-
                                                             </select>
                                                         </div>
                                                     </div>
@@ -484,8 +499,8 @@
 
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="employe1">Employer:</label>
-                                                            <input type="text" class="form-control" id="employe1"
+                                                            <label for="employment">Employer:</label>
+                                                            <input type="text" class="form-control" id="employment" id="employment"
                                                                 require>
                                                         </div>
                                                     </div>
@@ -500,8 +515,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="employe1">First Name:</label>
-                                                            <input type="text" class="form-control" id="employe1"
+                                                            <label for="fempname">First Name:</label>
+                                                            <input type="text" class="form-control" id="fempname" name="fempname"
                                                                 require>
                                                         </div>
                                                     </div>
@@ -509,8 +524,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="employe1">Last Name:</label>
-                                                            <input type="text" class="form-control" id="employe1"
+                                                            <label for="lnamemp">Last Name:</label>
+                                                            <input type="text" class="form-control" id="lnamemp" name="lnamemp"
                                                                 require>
                                                         </div>
                                                     </div>
@@ -530,19 +545,19 @@
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
-                                                            <label for="address1">Address :</label>
-                                                            <input type="text" class="form-control" id="address1"
-                                                                required>
+                                                            <label for="emmp_add">Address :</label>
+                                                            <input type="text" class="form-control" id="emmp_add" name="emmp_add"
+                                                                >
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
 
-                                                            <label for="country1">Country:</label>
+                                                            <label for="emp_contry">Country:</label>
 
-                                                            <select class="custom-select form-control" id="country1"
-                                                                name="country" required>
+                                                            <select class="custom-select form-control" id="emp_contry" name="emp_contry"
+                                                                name="country" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="canada">Canada </option>
                                                                 <option value="usa">USA</option>
@@ -556,38 +571,36 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="state1">State:</label>
-                                                            <input type="text" class="form-control" id="state1"
-                                                                required>
+                                                            <label for="emp_stat">State:</label>
+                                                            <input type="text" class="form-control" id="emp_stat" name="emp_stat"
+                                                                >
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
 
-                                                            <label for="city1">City:</label>
-                                                            <input type="text" class="form-control" id="city1" required>
+                                                            <label for="emp_city">City:</label>
+                                                            <input type="text" class="form-control" id="emp_city" name="emp_city" >
 
                                                         </div>
                                                     </div>
-                                                </div>
-
-
+                                                </div> 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="postalc1">Postal Code:</label>
-                                                            <input type="tel" class="form-control" id="postalc1"
-                                                                required>
+                                                            <label for="emp_postal">Postal Code:</label>
+                                                            <input type="tel" class="form-control" id="emp_postal" name="emp_postal"
+                                                                >
 
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="phoneNumber1">Phone Number :</label>
-                                                            <input type="tel" class="form-control" id="phoneNumber1"
-                                                                required>
+                                                            <label for="emp_phon">Phone Number :</label>
+                                                            <input type="tel" class="form-control" id="emp_phon" name="emp_phon"
+                                                                >
 
 
                                                         </div>
@@ -607,8 +620,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="insurance1">Website:</label>
-                                                            <input type="text" class="form-control" id="insurance1">
+                                                            <label for="emp_web">Website:</label>
+                                                            <input type="text" class="form-control" id="emp_web" name="emp_web">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -628,8 +641,8 @@
                                                             <label for="startdate">Start Date:</label>
                                                             <input type="text"
                                                                 class="form-control pickadate picker__input picker__input--active"
-                                                                placeholder="Basic Pick-a-date" readonly=""
-                                                                id="P1043209353" aria-haspopup="true"
+                                                                placeholder="Start Date" readonly=""
+                                                                id="ocu_st_date" name="ocu_st_date" aria-haspopup="true"
                                                                 aria-readonly="false" aria-owns="P1043209353_root">
                                                         </div>
                                                     </div>
@@ -637,7 +650,11 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="enddate">End Date:</label>
-                                                            <input type="date" class="form-control" id="end1" required>
+                                                            <input type="text"
+                                                                class="form-control pickadate picker__input picker__input--active"
+                                                                placeholder="End Date" readonly=""
+                                                                id="ocu_en_date" name="ocu_en_date" aria-haspopup="true"
+                                                                aria-readonly="false" aria-owns="P1043209353_root">
 
                                                         </div>
                                                     </div>
@@ -646,17 +663,17 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="salary1">Salary:</label>
-                                                            <input type="text" class="form-control" id="salary1"
-                                                                required>
+                                                            <label for="pos_salry">Salary:</label>
+                                                            <input type="text" class="form-control" id="pos_salry" name="pos_salry"
+                                                                >
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="salperd1">Salary Period:</label>
-                                                            <select class="custom-select form-control" id="salperd1"
-                                                                name="country" required>
+                                                            <label for="salry_period">Salary Period:</label>
+                                                            <select class="custom-select form-control" id="salry_period"
+                                                                name="salry_period" >
                                                                 <option value="" Disabled>Select</option>
                                                                 <option value="monthly">Monthly </option>
                                                                 <option value="weekly">Weekly</option>
@@ -668,7 +685,17 @@
                                                     </div>
                                                 </div>
 
-
+                                                <button type="button" class="close-fieldset-button"
+                                                        onclick="removeFieldset(this)"
+                                                        style="display: none;">Remove</button>
+                                                        
+                                                                <hr>
+                                               <br> 
+                                                    </div>
+                                                <div class="onl"> <button type="button" onclick="addFieldset()">Add
+                                                        Another Set</button>
+                                                </div>
+                                       
                                             </fieldset>
 
                                             <!-- Step 3 -->
@@ -859,7 +886,7 @@
                                                                     selected below â€“ check all that apply): </label>
                                                                 <br>
                                                                 <input type="checkbox" name="single_switchery"
-                                                                    class="switchery" required>
+                                                                    class="switchery" >
                                                                 I hereby consent to the release of details regarding my
                                                                 employment history, including employment data
                                                                 verifications from any employer/position I have
@@ -888,7 +915,7 @@
                                                                 to Mintz including all claims, demands, damages, costs,
                                                                 actions and causes of action, howsoever caused. </p>
                                                             <input type="checkbox" name="single_switchery"
-                                                                class="switchery" required>
+                                                                class="switchery" >
                                                             I have read the above and agree and authorize this handling
                                                             by Reference Check 360&deg;. I Agree
 
@@ -942,7 +969,7 @@
 
                                                             <div class="controls">
                                                                 <label for="participants1">Some basic information is
-                                                                    required in order to initiate the background
+                                                                     in order to initiate the background
                                                                     screening process. We recommend candidates to
                                                                     provide any supporting documents like resumes,
                                                                     copies of degrees, and letters of recommendation,
@@ -978,7 +1005,7 @@
                                                             <h3 class="sub-headingz">OR </h3>
 
                                                             <input type="checkbox" name="single_switchery"
-                                                                class="switchery" required>
+                                                                class="switchery" >
                                                             I don't have any document to upload
 
 
@@ -993,7 +1020,6 @@
 
                                             </fieldset>
 
-                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -1002,6 +1028,7 @@
                 </section>
                 <!-- Form wizard with number tabs section end -->
 
+                                        </form>
 
             </div>
         </div>
@@ -1019,29 +1046,73 @@
                     target="_blank">Reference Check 360 </a></span><span
                 class="float-md-right d-none d-lg-block">Hand-crafted &
                 Made with <i class="feather icon-heart pink"></i></span></p>
-    </footer>
-    <!-- END: Footer-->
+    </footer> 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
+<!-- <script>
+$(document).ready(function() {
+    // $('[role="menuitem"]').addClass('yourClassName').attr('type', 'submit');
+ 
+    $('#insert_form').on("submit", function(event) {
+        alert("as")
+                event.preventDefault(); 
+                    $.ajax({
+                        url: "acl/insert.php",
+                        method: "POST",
+                        data: $('#insert_form').serialize(),
+                        beforeSend: function() {
+                            $('#insert').val("Inserting");
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            $('#insert_form')[0].reset();
+                            // $('#zoomupModal').modal('hide');
+                            // $('#employee_table').html(data);
+                            // $("#html5-extension").load(" #html5-extension");
+                            // window.location.reload();
+                        }
+                    }); 
+            });
+}); 
+</script>  -->
+<!-- Fieldset duplicate 3 times start -->
+<script>
+    let fieldsetCount = 1;
 
-    <!-- BEGIN: Page Vendor JS-->
+    function addFieldset() {
+        if (fieldsetCount < 3) {
+            const container = document.getElementById('fieldset-container');
+            const firstFieldset = document.querySelector('.duplicatable-fieldset');
+            const newFieldset = firstFieldset.cloneNode(true);
+            fieldsetCount++;
+
+            newFieldset.querySelectorAll('input, select').forEach(input => {
+                input.id = input.id.replace(/\d+$/, '') + fieldsetCount;
+                input.value = '';
+            });
+
+            newFieldset.querySelector('.close-fieldset-button').style.display = 'block';
+            container.appendChild(newFieldset);
+        }
+    }
+
+    function removeFieldset(button) {
+        const fieldset = button.closest('fieldset');
+        fieldset.remove();
+        fieldsetCount--;
+    }
+    </script>
+    <!-- Fieldset duplicate 3 times start -->
+    <script src="app-assets/vendors/js/vendors.min.js"></script> 
     <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
-    <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script>
-    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <!-- <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script> -->
+     <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>  
     <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
     <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
-    <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
-
-
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script> 
     <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
+    <script src="app-assets/js/core/app.js"></script> 
     <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script>
     <script src="app-assets/vendors/js/pickers/dateTime/bootstrap-datetimepicker.min.js"></script>
     <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
@@ -1049,20 +1120,9 @@
     <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
     <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
     <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
-    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
-
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <!-- BEGIN: Page JS-->
+    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script> 
     <script src="app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js"></script>
-    <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
-
-    <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>
-    <!-- END: Page JS-->
-
-</body>
-<!-- END: Body-->
-
+    <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
+    <script src="app-assets/js/scripts/forms/wizard-steps.js"></script> 
+</body> 
 </html>

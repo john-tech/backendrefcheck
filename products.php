@@ -16,53 +16,27 @@
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon-32.png">
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
+        rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css"> 
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
-    <!-- END: Theme CSS-->
-
-    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css"> 
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- END: Custom CSS-->
-
-</head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
-
+ 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+</head> 
 <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu"
-    data-col="2-columns">
-
-    <!-- BEGIN: Header-->
-    <?php 
-    
-include("Config.php"); 
-    
-    include './sidebar.php' ?>
-    <!-- END: Main Menu-->
-
-    <!-- BEGIN: Content-->
+    data-col="2-columns"> 
+    <?php  
+    include("Config.php");  
+    include './sidebar.php' ?> 
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
 
-            <div class="content-body">
-
-
-                <!-- Content types section start -->
+            <div class="content-body"> 
                 <section id="content-types">
                     <div class="row">
                         <div class="col-12 mt-3 mb-1">
@@ -78,9 +52,9 @@ include("Config.php");
                         if (mysqli_num_rows($result) > 0) {
                         ?>
                     <?php
-                                    $i = 1;
-                                    while ($row = mysqli_fetch_array($result)) {
-                                    ?>
+                    $i = 1;
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
                     <div class="row match-height">
                         <div class="col-xl-4 col-md-6 col-sm-12">
                             <div class="card">
@@ -131,21 +105,10 @@ include("Config.php");
                     class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio"
                     target="_blank">PIXINVENT </a></span><span class="float-md-right d-none d-lg-block">Hand-crafted &
                 Made with <i class="feather icon-heart pink"></i></span></p>
-    </footer>
-    <!-- END: Footer-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
+    </footer> 
+    <script src="app-assets/vendors/js/vendors.min.js"></script> 
     <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
+    <script src="app-assets/js/core/app.js"></script> 
     <script>
     $(document).ready(function() {
         $('.addtocart').on("click", function(event) {
@@ -173,11 +136,6 @@ include("Config.php");
  
        
     });
-    </script>
-    <!-- BEGIN: Page JS-->
-    <!-- END: Page JS-->
-
-</body>
-<!-- END: Body-->
-
+    </script> 
+</body> 
 </html>

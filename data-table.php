@@ -1,8 +1,3 @@
-<?php
-include("sessioninput.php");
-
-
-?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -49,8 +44,12 @@ include("sessioninput.php");
 
 <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
-<?php include 'sidebar.php' ?>
+<?php
 
+include("Config.php"); 
+
+include 'sidebar.php' ?>
+ 
 
     <!-- BEGIN: Content-->
     <div class="app-content content">
@@ -94,39 +93,48 @@ include("sessioninput.php");
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                          <table class="table table-striped table-bordered dataex-html5-export">
+                                    <?php
+                        $result = mysqli_query($db, "SELECT * from bg_user_info");
+                        if (mysqli_num_rows($result) > 0) {
+                        ?>    
+                                    <table class="table table-striped table-bordered dataex-html5-export">
                                                 <thead>
                                                     <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Age</th>
-                                                        <th>Start date</th>
-                                                        <th>Salary</th>
+                                                        <th>No</th>
+                                                        <th>Reference Number</th>
+                                                        <th>Request Date</th>
+                                                        <th>Retail Order Id</th>
+                                                        <th>Service</th>
+                                                        <th>Status Code</th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-        
-                                                    <tr>
-                                                        <td>Shad Decker</td>
-                                                        <td>Regional Director</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>51</td>
-                                                        <td>2008/11/13</td>
-                                                        <td>$183,000</td>
-                                                    </tr>
-                                                   
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
-                                                        <th>Age</th>
-                                                        <th>Start date</th>
-                                                        <th>Salary</th>
-                                                    </tr>
-                                                </tfoot>
+                                                <?php
+                                    $i = 1;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr>
+                                            <td class="text-center"><?php echo $i ?></td>
+                                            <td class="text-center"><?php echo $row["created_at"]; ?></td>
+                                            <td class="text-center"><?php echo $row["created_at"]; ?></td>
+                                            <td class="text-center"><?php  ?></td>
+                                            <td class="text-center"><?php echo $row["service_name"]; ?></td>
+                                            <td class="text-center">Not Paid</td>
+
+                                            
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
+                                </tbody>
+                          
+                        <?php
+                        } else {
+                            echo "No result found";
+                        }
+                        ?>
                                             </table>
                                     </div>
                                 </div>
