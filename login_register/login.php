@@ -1,40 +1,45 @@
 <?php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'bgcheck_php');
+ $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 session_start();
-include("../Config.php"); 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+header('Access-Control-Allow-Origin: *'); 
+header("Access-Control-Allow-Origin: https://bgcheckapp.matrixanalytic.com");
 if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['user-name']);
-  $password = mysqli_real_escape_string($db, $_POST['user-password']);
-  
-        $password = md5($password);
-        // $query = "SELECT * FROM bg_users WHERE username='$username' AND password='$password'";
-
-        $query = "SELECT userid FROM bg_users WHERE username = '$username' and password = '$password'";
-
-        $results = mysqli_query($db, $query);
-        
-        $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-        $id = $row['userid'];
-        
-        $count = mysqli_num_rows($results);
-        if($count == 1) {
-           $_SESSION['username'] = $username;
-           $_SESSION['password'] = $password;
-           $_SESSION['userid'] = $id;
-      //      $_SESSION['prive'] = $row['privilege'];
-      //      if($_SESSION['prive'] == 'admin_user'){
-      //         $_SESSION['userid'] = 1;
-      //      }else{
-      //         $_SESSION['userid'] = $row['id'];
-      //      }
-  
-           echo $_SESSION['username']; 
-
-           header('location: ../products.php'); 
-        }else {
-            echo "<script>alert('User not found'); window.location.href='../index.php';</script>";
-     }
+    $username = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['user-password']);
  
-}
+    $query = "SELECT userid, fname, password, privilage FROM bg_users WHERE email = '$username'";
+    $result = mysqli_query($db, $query);
 
+    if (!$result) { 
+        die("Error: " . mysqli_error($db));
+    }
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        // Verify password
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['fname'] = $row['fname'];
+            $_SESSION['userid'] = $row['userid'];
+            // $_SESSION['prive'] = $row['privilage'];
+
+            // if ($_SESSION['prive'] == 'admin') {
+            //    echo $_SESSION['userid'] = 1;
+            // } 
+            header('Location: ../products.php');
+            exit();
+        } else { 
+            echo "<script>alert('Incorrect password. Please try again.'); window.location.href='../index.php';</script>";
+        }
+    } else { 
+        echo "<script>alert('User not found.'); window.location.href='../index.php';</script>";
+    }
+}
 ?>

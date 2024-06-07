@@ -114,7 +114,7 @@
         $('.addtocart').on("click", function(event) {
             event.preventDefault(); 
                var cart_id= $(this).attr('id');
-                alert(cart_id)
+                // alert(cart_id)
                 $.ajax({
                     url: "cart/add_cart.php",
                     method: "POST", 
@@ -127,7 +127,7 @@
                     success: function(data) {
                         console.log(data);
                         // $('#insert_form')[0].reset();    
-                        window.location.href='my-cart.php?id='+data;
+                        window.location.href='my-cart.php?id='+cart_id;
                     }
                 });
          

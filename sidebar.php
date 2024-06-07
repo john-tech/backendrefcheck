@@ -1,5 +1,6 @@
 <?php
 include("sessioninput.php");
+$admin_ka_user=$_SESSION['prive'];
 ?>
 
 <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-light bg-gradient-x-grey-blue">
@@ -25,7 +26,7 @@ include("sessioninput.php");
                     </ul>
                     <ul class="nav navbar-nav float-right"> 
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="avatar avatar-online"><img src="app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></div><span class="user-name">  <?php echo $_SESSION["username"]; ?></span>
+                                <div class="avatar avatar-online"><img src="app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></div><span class="user-name">  <?php echo $_SESSION["fname"]; ?></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!-- <a class="dropdown-item" href="user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="user-cards.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a> -->

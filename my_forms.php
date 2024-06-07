@@ -52,32 +52,17 @@
     $qry = mysqli_query($db,"SELECT bg_products.* , cart.pro_qty FROM cart INNER JOIN bg_users ON cart.user_id = bg_users.userid INNER JOIN bg_products ON cart.pro_id = bg_products.pro_id WHERE bg_products.pro_id = '$id';"); // select query
     $data = mysqli_fetch_array($qry); 
 
-
-
-    // 
-
-
-
-//     if(isset($_GET['action']) && $_GET['action']=="add"){
-// 	$id=intval($_GET['id']);
-// 	if(isset($_SESSION['cart'][$id])){
-// 		$_SESSION['cart'][$id]['quantity']++;
-// 	}else{
-// 		$sql_p="SELECT * FROM bg_products WHERE pro_id={$id}";
-// 		$query_p=mysqli_query($db,$sql_p);
-// 		if(mysqli_num_rows($query_p)!=0){
-// 			$row_p=mysqli_fetch_array($query_p);
-// 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
-		
-// 		}else{
-// 			$message="Product ID is invalid";
-// 		}
-// 	}
-// 		echo "<script>alert('Product has been added to the cart')</script>";
-// 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
-// }
-
+     $product_pric =$data['org_pric'];
+     $amount_set =$data['pro_qty']; 
+    $totl  =$product_pric*$amount_set; 
 ?>
+
+<style>
+    /* Summary labels bold */
+label.ans-field {
+    font-weight: 600 !important;
+}
+</style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -113,8 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content-body">
-                <!-- Form wizard with number tabs section start -->
+            <div class="content-body"> 
                 <section id="number-tabs">
                     <div class="row">
                         <div class="col-12">
@@ -134,6 +118,9 @@
                                 </div> -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
+                                    <button type="button" class="btn btn-outline-primary block btn-lg" data-toggle="modal" data-target="#iconModal">
+                                                        Launch Modal
+                                                    </button>
                                         <form id="insert_form" class="steps-validation wizard-circle">
 
                                             <!-- Step 1 -->
@@ -142,12 +129,13 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <input type="hidden" id="amountx"name="amountx" value="<?= $totl;?>">
                                                             <input type="hidden" id="services"name="services" value="<?= $data['name'];?>">
                                                             <label for="firstName1">Report Language:</label>
                                                             <!--   <input type="text" class="form-control" id="firstName1"> -->
                                                             <select class="custom-select form-control"  id="r_lang"
                                                                 name="r_lang" >
-                                                                <option value="" Disabled>Select Language</option>
+                                                                <option value="">Select Language</option>
                                                                 <option value="English">English </option>
                                                                 <option value="French">French</option>
                                                             </select>
@@ -161,7 +149,7 @@
 
                                                             <select class="custom-select form-control" id="pos_app"
                                                                 name="pos_app" >
-                                                                <option value="" Disabled>Select Position</option>
+                                                                <option value="">Select Position</option>
                                                                 <option value="Employment">Employment</option>
                                                                 <option value="Background Screening">Background
                                                                     Screening</option>
@@ -177,7 +165,17 @@
                                                             <label for="firstName1">First Name:</label>
                                                             <input type="text" class="form-control " id="fname"
                                                                 name="fname" >
+                                                                <?php
+                                                               $randomNumber = mt_rand(100000000, 999999999999);
 
+                                                               // Format the random number
+                                                               $formattedNumber = sprintf("EM%012d", $randomNumber);
+                                                               
+                                                               // Output the formatted number
+                                                            //    echo $formattedNumber;
+                                                                ?>
+                                                                <input type="text" class="form-control " id="refnumb"
+                                                                name="refnumb" >
                                                         </div>
                                                     </div>
 
@@ -196,11 +194,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="date1">Date of Birth :</label> 
-                                                                <input type="text" 
-                                                                class="form-control pickadate picker__input picker__input--active"
-                                                                placeholder="Date Of Birth" readonly=""
-                                                                id="dob_dat" name="dob_dat" aria-haspopup="true"
-                                                                aria-readonly="false" aria-owns="P1043209353_root">
+                                                                <input type="date"  class="form-control" id="dob_dat" name="dob_dat"  >
 
                                                         </div>
                                                     </div>
@@ -231,10 +225,9 @@
 
                                                             <select class="custom-select form-control" id="gender"
                                                                 name="gender" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="male">Male </option>
                                                                 <option value="female">Female</option>
-
                                                             </select>
 
                                                         </div>
@@ -251,7 +244,6 @@
 
                                                 <div class="row">
                                                     <div class="col-md-6">
-
                                                         <div class="form-group">
                                                             <label for="address1">Address :</label>
                                                             <input type="text" class="form-control" id="addressx"
@@ -266,7 +258,7 @@
 
                                                             <select class="custom-select form-control" id="countryx"
                                                                 name="countryx" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="Canada">Canada </option>
                                                                 <option value="USA">USA</option>
 
@@ -402,7 +394,7 @@
 
                                                             <select class="custom-select form-control" id="countrijex"
                                                                 name="countrijex" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="canada">Canada </option>
                                                                 <option value="USA">USA</option>
 
@@ -471,7 +463,7 @@
 
                                                             <select class="custom-select form-control" id="contemp"
                                                                 name="contemp" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="yes">Yes </option>
                                                                 <option value="no">No</option>
 
@@ -485,7 +477,7 @@
 
                                                             <select class="custom-select form-control" id="wcanada"
                                                                 name="wcanada" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="yes">Yes </option>
                                                                 <option value="no">No</option>
                                                             </select>
@@ -500,7 +492,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="employment">Employer:</label>
-                                                            <input type="text" class="form-control" id="employment" id="employment"
+                                                            <input type="text" class="form-control" id="employment" name="employment"
                                                                 require>
                                                         </div>
                                                     </div>
@@ -558,7 +550,7 @@
 
                                                             <select class="custom-select form-control" id="emp_contry" name="emp_contry"
                                                                 name="country" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="canada">Canada </option>
                                                                 <option value="usa">USA</option>
 
@@ -639,22 +631,14 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="startdate">Start Date:</label>
-                                                            <input type="text"
-                                                                class="form-control pickadate picker__input picker__input--active"
-                                                                placeholder="Start Date" readonly=""
-                                                                id="ocu_st_date" name="ocu_st_date" aria-haspopup="true"
-                                                                aria-readonly="false" aria-owns="P1043209353_root">
+                                                            <input type="date"class="form-control"id="ocu_st_date" name="ocu_st_date"  >
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="enddate">End Date:</label>
-                                                            <input type="text"
-                                                                class="form-control pickadate picker__input picker__input--active"
-                                                                placeholder="End Date" readonly=""
-                                                                id="ocu_en_date" name="ocu_en_date" aria-haspopup="true"
-                                                                aria-readonly="false" aria-owns="P1043209353_root">
+                                                            <input type="date"class="form-control" id="ocu_en_date" name="ocu_en_date"  >
 
                                                         </div>
                                                     </div>
@@ -672,9 +656,9 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="salry_period">Salary Period:</label>
-                                                            <select class="custom-select form-control" id="salry_period"
+                                                            <select class="form-control" id="salry_period"
                                                                 name="salry_period" >
-                                                                <option value="" Disabled>Select</option>
+                                                                <option value="">Select</option>
                                                                 <option value="monthly">Monthly </option>
                                                                 <option value="weekly">Weekly</option>
                                                                 <option value="daily">Daily</option>
@@ -710,7 +694,10 @@
                                                     <div class="col-md-12">
                                                         <h3 class="sub-headingz"> Candidate Details </h3>
                                                     </div>
-                                                    <div class="col-md-6">
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3">
 
 
                                                         <div class="form-group">
@@ -727,7 +714,26 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-6">
+
+
+
+                                                    <div class="col-md-3">
+
+
+                                                        <div class="form-group">
+                                                            <label for="participants1" id="fname_summary" class="ans-field"> </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field" id="lname_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field"id="gender_summary" > </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label for="meetingName1">DOB: </label>
 
@@ -757,9 +763,42 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <h3 class="sub-headingz">Current Residential Address: </h3>
+                                                            <label for="meetingName1" class="ans-field" id="dob_dat_summary">  </label>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="meetingLocation1" class="ans-field" id="age1_summary"> </label>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field"id="pob1_summary"></label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field" id="phoneNumer1_summary"> </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field" id="emel1_summary"> </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="participants1" class="ans-field" id="pos_app_summary" >Position applied (if applicable)
+                                                                or object of the audit:1 </label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <h3 class="sub-headingz" >Current Residential Address: </h3>
 
                                                         </div>
 
@@ -785,18 +824,47 @@
 
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
 
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <hr>
+                                                            <h3 class="sub-headingz" class="ans-field margn-align">Current Residential Address:1 </h3>
 
                                                         </div>
 
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="addressx_summary">  </label>
+
+                                                        </div>
+
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="cityu_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="statex_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="postaladd_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="countryx_summary">  </label>
+
+                                                        </div>
                                                     </div>
 
-                                                    <div class="col-md-12">
+                                                </div>
+                                                <div class="col-md-12">
 
+                                                    <div class="form-group">
+                                                        <hr>
 
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
 
                                                         <div class="form-group">
                                                             <h3 class="sub-headingz">Employment History: </h3>
@@ -859,15 +927,75 @@
                                                             <label for="participants1">Salary Period: </label>
                                                         </div>
                                                     </div>
-                                            </fieldset>
 
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <!-- <h3 class="sub-headingz" class="ans-field">Employment History:1 </h3> -->
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                        <label for="participants1" class="ans-field" id="contemp_summary">  </label>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                        <label for="participants1" class="ans-field" id="wcanada_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                        <label for="participants1" class="ans-field" id="employment_summary">  </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                        <label for="participants1" class="ans-field" id="fempname_summary">  </label>
+
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                        <label for="participants1" class="ans-field" id="lnamemp_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group">     
+                                                            <label for="participants1" class="ans-field" id="emp_phon_summary">  </label>
+
+                                                        </div>
+
+                                 <div class="form-group">
+                                                            <h3 class="sub-headingz" class="ans-field">Employment History:1 </h3>
+
+                                                        </div>
+                                                        <div class="form-group">  
+                                                            <label for="participants1" class="ans-field" id="employment_summary">  </label>
+
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="ocu_st_date_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="ocu_en_date_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="pos_salry_summary">  </label>
+
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="participants1" class="ans-field" id="salry_period_summary">  </label>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
                                             <!-- Step 4 -->
                                             <h6>Signature</h6>
                                             <fieldset>
 
-                                                <div class="row">
-
-
+                                                <div class="row">  
                                                     <div class="card-content collapse show">
 
                                                     </div>
@@ -885,8 +1013,8 @@
                                                                     to RC 360, to obtain the following information (as
                                                                     selected below â€“ check all that apply): </label>
                                                                 <br>
-                                                                <input type="checkbox" name="single_switchery"
-                                                                    class="switchery" >
+                                                                <input type="checkbox" name="authorized" id="authorized"
+                                                                    class="switchery" value="No">
                                                                 I hereby consent to the release of details regarding my
                                                                 employment history, including employment data
                                                                 verifications from any employer/position I have
@@ -914,7 +1042,7 @@
                                                                 any and all liability for the disclosure of information
                                                                 to Mintz including all claims, demands, damages, costs,
                                                                 actions and causes of action, howsoever caused. </p>
-                                                            <input type="checkbox" name="single_switchery"
+                                                            <input type="checkbox" id="agresign"name="agresign" value="No"
                                                                 class="switchery" >
                                                             I have read the above and agree and authorize this handling
                                                             by Reference Check 360&deg;. I Agree
@@ -938,7 +1066,6 @@
                                                                     <button id="clear">Clear</button>
                                                                     <button id="showPointsToggle">Show points?</button>
                                                                 </div>
-
 
                                                             </section>
                                                             <!-- partial -->
@@ -1004,7 +1131,7 @@
                                                         <div class="form-group">
                                                             <h3 class="sub-headingz">OR </h3>
 
-                                                            <input type="checkbox" name="single_switchery"
+                                                            <input type="checkbox" id="hav_docu" name="hav_docu" value="No"
                                                                 class="switchery" >
                                                             I don't have any document to upload
 
@@ -1034,76 +1161,192 @@
         </div>
     </div>
     <!-- END: Content-->
+    <div class="modal fade text-left" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title" id="myModalLabel2"><i class="fa fa-road2"></i> Payment With Stripe</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>Sweet roll biscuit donut cake gingerbread. Chocolate cupcake chocolate bar ice cream. Danish candy cake.</p>
+                                                                    <div class="mb-3">
+                                                        <label for="eventname">Payment</label>
+                                                        <div id="card-element"> </div>
+                                                        <div id="card-errors" role="alert"></div>
+                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-outline-primary">Save changes</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-dark navbar-border">
-        <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-                class="float-md-left d-block d-md-inline-block">Copyright &copy; 2024 <a
-                    class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio"
-                    target="_blank">Reference Check 360 </a></span><span
-                class="float-md-right d-none d-lg-block">Hand-crafted &
-                Made with <i class="feather icon-heart pink"></i></span></p>
-    </footer> 
+  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<!-- <script>
+    <script src="https://js.stripe.com/v3/"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script>
 $(document).ready(function() {
     // $('[role="menuitem"]').addClass('yourClassName').attr('type', 'submit');
  
-    $('#insert_form').on("submit", function(event) {
-        alert("as")
-                event.preventDefault(); 
-                    $.ajax({
-                        url: "acl/insert.php",
-                        method: "POST",
-                        data: $('#insert_form').serialize(),
-                        beforeSend: function() {
-                            $('#insert').val("Inserting");
-                        },
-                        success: function(data) {
-                            console.log(data);
-                            $('#insert_form')[0].reset();
-                            // $('#zoomupModal').modal('hide');
-                            // $('#employee_table').html(data);
-                            // $("#html5-extension").load(" #html5-extension");
-                            // window.location.reload();
-                        }
-                    }); 
-            });
-}); 
-</script>  -->
-<!-- Fieldset duplicate 3 times start -->
-<script>
-    let fieldsetCount = 1;
 
-    function addFieldset() {
-        if (fieldsetCount < 3) {
-            const container = document.getElementById('fieldset-container');
-            const firstFieldset = document.querySelector('.duplicatable-fieldset');
-            const newFieldset = firstFieldset.cloneNode(true);
-            fieldsetCount++;
-
-            newFieldset.querySelectorAll('input, select').forEach(input => {
-                input.id = input.id.replace(/\d+$/, '') + fieldsetCount;
-                input.value = '';
-            });
-
-            newFieldset.querySelector('.close-fieldset-button').style.display = 'block';
-            container.appendChild(newFieldset);
+    $(".form-control").on("input", function(){
+        var id = $(this).attr('id');
+        var value = $(this).val();
+        console.log("Input " + id + ": " + value);
+        // Update summary section
+        $("#" + id + "_summary").text(value);
+    });
+   
+        $('#authorized').click(function() { 
+        if ($(this).is(':checked')) {
+            $(this).val('Yes');
+        } else {
+            $(this).val('No');
         }
-    }
+    });
+        $('#agresign').click(function() { 
+        if ($(this).is(':checked')) {
+            $(this).val('Yes');
+        } else {
+            $(this).val('No');
+        }
+    });
+        $('#hav_docu').click(function() { 
+        if ($(this).is(':checked')) {
+            $(this).val('Yes');
+        } else {
+            $(this).val('No');
+        }
+    });
+    });
+    
+         
+            var stripe = Stripe(
+                "pk_test_51M35IfLsuGyV4cRXL5d9GrGV7UiTCSw84LcVwHXm4aqH3SIJsWtWSqFDMhmltCpzFQZVUpPD8zpEr18fuHNF3rl000AJifjLUl"
+            );
+            var elements = stripe.elements();
+            var style = {
+                base: {
+                    color: "#32325d",
+                    fontSmoothing: "antialiased",
+                    fontSize: "16px",
+                    "::placeholder": {
+                        color: "#aab7c4"
+                    }
+                },
+                invalid: {
+                    color: "#fa755a",
+                    iconColor: "#fa755a"
+                }
+            };
+            var card = elements.create("card", {
+                style: style
+            });
+            card.mount("#card-element");
+            card.addEventListener("change", function(event) {
+                var displayError = document.getElementById("card-errors");
+                if (event.error) {
+                    displayError.textContent = event.error.message;
+                } else {
+                    displayError.textContent = "";
+                }
+            });
+            var form = document.getElementById("payment-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
 
-    function removeFieldset(button) {
-        const fieldset = button.closest('fieldset');
-        fieldset.remove();
-        fieldsetCount--;
-    }
-    </script>
-    <!-- Fieldset duplicate 3 times start -->
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+
+                        var errorElement = document.getElementById("card-errors");
+                        errorElement.textContent = result.error.message;
+                    } else {
+
+                        stripeTokenHandler(result.token);
+                    }
+                });
+            });
+
+            function stripeTokenHandler(token) {
+
+                var form = document.getElementById("payment-form");
+                var hiddenInput = document.createElement("input");
+                hiddenInput.setAttribute("type", "hidden");
+                hiddenInput.setAttribute("name", "stripeToken");
+                hiddenInput.setAttribute("value", token.id);
+                form.appendChild(hiddenInput);
+                form.submit();
+            }
+            </script>
+            
+            <script type="text/javascript">
+            var stripe = Stripe(
+                "pk_test_51M35IfLsuGyV4cRXL5d9GrGV7UiTCSw84LcVwHXm4aqH3SIJsWtWSqFDMhmltCpzFQZVUpPD8zpEr18fuHNF3rl000AJifjLUl"
+            );
+            var elements = stripe.elements();
+            var style = {
+                base: {
+                    color: "#32325d",
+                    fontSmoothing: "antialiased",
+                    fontSize: "16px",
+                    "::placeholder": {
+                        color: "#aab7c4"
+                    }
+                },
+                invalid: {
+                    color: "#fa755a",
+                    iconColor: "#fa755a"
+                }
+            };
+            var card = elements.create("card", {
+                style: style
+            });
+            card.mount("#card-element");
+            card.addEventListener("change", function(event) {
+                var displayError = document.getElementById("card-errors");
+                if (event.error) {
+                    displayError.textContent = event.error.message;
+                } else {
+                    displayError.textContent = "";
+                }
+            });
+            var form = document.getElementById("payment-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+
+                        var errorElement = document.getElementById("card-errors");
+                        errorElement.textContent = result.error.message;
+                    } else {
+
+                        stripeTokenHandler(result.token);
+                    }
+                });
+            });
+
+            function stripeTokenHandler(token) {
+
+                var form = document.getElementById("payment-form");
+                var hiddenInput = document.createElement("input");
+                hiddenInput.setAttribute("type", "hidden");
+                hiddenInput.setAttribute("name", "stripeToken");
+                hiddenInput.setAttribute("value", token.id);
+                form.appendChild(hiddenInput);
+                form.submit();
+            }
+            </script>
+ 
+</script>  
     <script src="app-assets/vendors/js/vendors.min.js"></script> 
     <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
     <!-- <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script> -->

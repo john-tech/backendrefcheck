@@ -1,6 +1,7 @@
 <?php
 include("../config.php");
 session_start();
+
 $user_id = $_SESSION['userid'];
 
 if (isset($_POST["update_val"]) && ($_POST["update_val"])) { 

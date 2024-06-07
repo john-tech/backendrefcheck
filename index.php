@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html class="loading" lang="en">
 <!-- BEGIN: Head-->
@@ -62,18 +60,12 @@
                                     </div>
                                     <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Welcome To Reference Check 360° </span></h6>
                                 </div>
-                                <div class="card-content">
-                                    <!-- <div class="card-body pt-0 text-center">
-                                        <a href="#" class="btn btn-social mb-1 mr-1 btn-outline-facebook"><span class="fa fa-facebook"></span> <span class="px-1">facebook</span> </a>
-                                        <a href="#" class="btn btn-social mb-1 mr-1 btn-outline-google"><span class="fa fa-google-plus font-medium-4"></span> <span class="px-1">google</span> </a>
-                                    </div> -->
-                                    <!-- <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2"><span>OR Using
-                                            Account Details</span></p> -->
+                                <div class="card-content"> 
                                     <div class="card-body pt-0">
                                         <form class="form-horizontal"  method="post" action="login_register/login.php">
                                             <fieldset class="form-group floating-label-form-group">
-                                                <label for="user-name">Your Username</label>
-                                                <input type="text" class="form-control" id="user-name" name="user-name" placeholder="Your Username">
+                                                <label for="email">Your Email</label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                             </fieldset>
                                             <fieldset class="form-group floating-label-form-group mb-1">
                                                 <label for="user-password">Enter Password</label>
@@ -92,9 +84,9 @@
                                         </form>
                                     </div>
                                     <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>New to
-                                            Stack ?</span></p>
+                                    Reference Check 360° ?</span></p>
                                     <div class="card-body">
-                                        <a href="register-with-bg.php" class="btn btn-outline-danger btn-block"><i class="feather icon-user"></i> Register</a>
+                                        <a href="register.php" class="btn btn-outline-danger btn-block"><i class="feather icon-user"></i> Register</a>
                                     </div>
                                 </div>
                             </div>
